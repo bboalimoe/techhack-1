@@ -36,15 +36,3 @@ request({url: queryUrl}, function (error, response, body) {
     }
 });
 
-request({url: query.productUrl}, function (error, response, body) {
-    console.log(error);
-    if (!error && response.statusCode == 200) {
-        console.log("successful get !");
-        var proRes = JSON.parse(body);
-        var item={
-            productId : query.productId,
-            prodDetail : proRes
-        }
-        proDetailList.push(item);
-    }
-});
